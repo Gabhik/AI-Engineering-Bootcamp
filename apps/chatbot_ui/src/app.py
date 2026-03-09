@@ -30,7 +30,7 @@ def api_call(method, url, **kwargs):
         return False, {"message": "Connection error"}
     except requests.exceptions.Timeout:
         _show_error_popup("The request timed out. Please try again later.")
-        return False, {"message": "Request timeout"}
+        return False, {"message": "Request timeout"}    
     except Exception as e:
         _show_error_popup(f"An unexpected error occurred: {str(e)}")
         return False, {"message": str(e)}
